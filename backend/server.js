@@ -11,11 +11,6 @@ const connection = new mongoose.connect(db.url, {useNewUrlParser:true, useUnifie
     console.log(mongoose.connection.readyState + "   11");
 });
 
-connection.once('Connected', function () {
-    console.log("MongoDB database connection established successfully!");
-    console.log(mongoose.connection.readyState + "    12");
-});
-
 
 const cors = require('cors');
 
@@ -27,9 +22,9 @@ const userRouter = require('./routes/users');
 app.use('/exercises', exerciseRouter);
 app.use('/users', userRouter);
 
-// app.get('/user', function(req, res){
-//     res.send("Working");
-// })
+app.get('/user', function(req, res){
+    res.send("Working");
+})
 var server = app.listen(port, function(){
     console.log("Priest Server running !");
 });  
