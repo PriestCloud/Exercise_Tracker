@@ -11,8 +11,9 @@ db.url = dbConfig.url;
 
 
 const mycon = new mongoose.connect(db.url, {useNewUrlParser:true, useUnifiedTopology: true }, function(err, db) {
-    console.log(mongoose.connection.readyState + "   11");
+    console.log("EFFFF");
 });
+
 
 const exerciseRouter = require('./routes/exercises');
 const userRouter = require('./routes/users');
